@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const adminprefix = "-"
-
+const prefix = "+"
 
 client.on('message', function(message) {
 	const myID = "457566403793518603";
@@ -82,10 +82,10 @@ client.login(process.env.BOT_TOKEN);
 });
 client.on('message', message => {
   if (message.author.bot) return;
-  if (!message.content.startsWith(adminprefix)) return;
+  if (!message.content.startsWith(prefix)) return;
 
   let command = message.content.split(" ")[0];
-  command = command.slice(adminprefix.length);
+  command = command.slice(prefix.length);
 
   let args = message.content.split(" ").slice(1);
 
